@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { sectionsHome, productsHome } from '../models/home';
 import { Model } from 'sequelize-typescript';
-import { ProductProps, sectionsFromDBProps } from '../src/types';
+import { ProductProps } from '../src/types';
 import { parse } from 'dotenv';
 
 async function getHomeSections() {
@@ -77,7 +77,6 @@ export const getProducts = async (_req: Request, res: Response) => {
                 sectionId: section.dataValues.id.toString(),
                 sectionName: section.dataValues.name,
                 sectionImageUrl: section.dataValues.imageUrl,
-                // productList: section.dataValues.productList,
             }
             return newSection
         });
@@ -171,20 +170,4 @@ export const getProductList = async (_req: Request, res: Response) => {
         res.status(500).json({ msg: 'Internal Server Error' });
     }
 }
-
-
-export const getProductDetail = async (req: Request, res: Response) => {
-    const { id } = req.params;
-    console.log(id)
-    const productDetail = await productsHome.findByPk(id);
-    if (productDetail) {
-        res.json(productDetail);
-    } else {
-        res.status(404).json({
-            msg: `No existe un usuario con el id: ${id}`,
-        });
-    }
-}
-
-
 
