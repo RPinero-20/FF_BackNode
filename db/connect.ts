@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize-typescript';
 import pg from 'pg'
 
 const db = new Sequelize('f_ferlestore', 'root', '', {
-    host: 'postgres://root:Xvi7nT51Mx8a6ODf0nesRdODtHkB1kXu@dpg-cm7dtdi1hbls73aa4ue0-a/f_ferlestore',
+    host: 'postgres://root:Xvi7nT51Mx8a6ODf0nesRdODtHkB1kXu@dpg-cm7dtdi1hbls73aa4ue0-a.oregon-postgres.render.com/f_ferlestore',
     dialect: 'postgres',
     //logging: false,
 });
