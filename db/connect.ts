@@ -9,7 +9,7 @@ import pg from 'pg'
 
 const db = new pg.Pool({
 	connectionString: process.env.DATABASE_URL,
-        ssl: true
+        //ssl: true
 })
 
 // const db = new Sequelize('f_ferlestore', 'root', '', {
