@@ -32,14 +32,14 @@ class Server {
         this.routes();
     }
 
-    async dbConnection() {
-        try {
-            await conectToDB.authenticate();
-            console.log('DB OnLine')
-        } catch (error) {
-            throw new Error( error as string );
-        }
-    }
+    // async dbConnection() {
+    //     try {
+    //         await conectToDB.authenticate();
+    //         console.log('DB OnLine')
+    //     } catch (error) {
+    //         throw new Error( error as string );
+    //     }
+    // }
 
     middlewares() {
         // CORS
