@@ -23,7 +23,7 @@ export async function conectToDB() {
         await db.authenticate();
         console.log('DB is conected');
     } catch (error) {
-        throw new Error(error as string);
+        throw new Error(error as string + 'DB Error');
     }
 }
 
