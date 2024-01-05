@@ -59,9 +59,6 @@ exports.productDetails = connect_1.default.define('ff_products', {
     isOffer: {
         type: sequelize_typescript_1.DataType.BOOLEAN
     },
-    discount: {
-        type: sequelize_typescript_1.DataType.INTEGER
-    },
     categoryID: {
         type: sequelize_typescript_1.DataType.INTEGER
     },

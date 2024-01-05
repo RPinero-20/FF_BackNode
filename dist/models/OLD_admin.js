@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.productsHome = exports.sectionsHome = void 0;
+exports.adminProducts = exports.sectionsHome = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
 const connect_1 = __importDefault(require("../db/connect"));
 exports.sectionsHome = connect_1.default.define('ff_sections', {
@@ -20,7 +20,7 @@ exports.sectionsHome = connect_1.default.define('ff_sections', {
 }, {
     timestamps: false
 });
-exports.productsHome = connect_1.default.define('ff_products', {
+exports.adminProducts = connect_1.default.define('ff_products', {
     id: {
         primaryKey: true,
         type: sequelize_typescript_1.DataType.STRING
@@ -34,11 +34,41 @@ exports.productsHome = connect_1.default.define('ff_products', {
     code: {
         type: sequelize_typescript_1.DataType.STRING
     },
+    type: {
+        type: sequelize_typescript_1.DataType.STRING
+    },
+    byWeight: {
+        type: sequelize_typescript_1.DataType.BOOLEAN
+    },
+    weightPerUnit: {
+        type: sequelize_typescript_1.DataType.FLOAT
+    },
+    weightPerBox: {
+        type: sequelize_typescript_1.DataType.FLOAT,
+    },
+    byUnit: {
+        type: sequelize_typescript_1.DataType.BOOLEAN
+    },
+    unitQty: {
+        type: sequelize_typescript_1.DataType.INTEGER
+    },
+    unitPerBox: {
+        type: sequelize_typescript_1.DataType.INTEGER
+    },
     description: {
         type: sequelize_typescript_1.DataType.STRING
     },
     isOffer: {
         type: sequelize_typescript_1.DataType.BOOLEAN
+    },
+    isFree: {
+        type: sequelize_typescript_1.DataType.BOOLEAN
+    },
+    isOutStock: {
+        type: sequelize_typescript_1.DataType.BOOLEAN
+    },
+    discount: {
+        type: sequelize_typescript_1.DataType.NUMBER
     },
     categoryID: {
         type: sequelize_typescript_1.DataType.INTEGER
@@ -52,4 +82,4 @@ exports.productsHome = connect_1.default.define('ff_products', {
 }, {
     timestamps: false
 });
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=OLD_admin.js.map

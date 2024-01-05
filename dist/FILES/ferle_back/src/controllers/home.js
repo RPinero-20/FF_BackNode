@@ -9,23 +9,26 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.conectToDB = void 0;
-const sequelize_typescript_1 = require("sequelize-typescript");
-const db = new sequelize_typescript_1.Sequelize({
-    dialect: 'sqlite',
-    storage: './database/f_ferlestore.db'
-});
-function conectToDB() {
+const Product_1 = require("../models/Product");
+function homeApi(_, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield db.authenticate();
-            console.log('DB is conected OK!!!');
+            const productsFromDb = yield Product_1.Product.findAll();
+            const productsList = productsFromDb.map((product) => ({
+                code: product.code,
+                name: product.name,
+                description: product.description,
+                price: product.price,
+                isInOffer: product.isInOffer,
+                discount: product.discount,
+                imageUrl: product.imageUrl,
+            }));
+            res.json(productsList);
         }
-        catch (error) {
-            throw new Error(error);
+        catch (_a) {
+            res.status(500).json({ msg: 'Database problem, please contact admin' });
         }
     });
 }
-exports.conectToDB = conectToDB;
-exports.default = db;
-//# sourceMappingURL=connect.js.map
+exports.default = homeApi;
+//# sourceMappingURL=home.js.map

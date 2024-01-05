@@ -9,22 +9,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteProducts = exports.postProduct = exports.putProductToEdit = exports.getProductById = exports.getProducts = exports.getAdminCategories = void 0;
+exports.deleteProducts = exports.postProduct = exports.putProductToEdit = exports.getProductById = exports.getProducts = void 0;
 const admin_1 = require("../models/admin");
-const getAdminCategories = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    try {
-        const categoryList = yield admin_1.adminCategory.findAll();
-        res.json(categoryList);
-    }
-    catch (error) {
-        console.log(error);
-        res.status(500).json({
-            error: ' Internal Server Error'
-        });
-    }
-});
-exports.getAdminCategories = getAdminCategories;
 const getProducts = (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('POR AQUI PASÓ!');
     try {
         const productList = yield admin_1.adminProducts.findAll();
         res.json(productList);
@@ -132,4 +120,4 @@ const deleteProducts = (req, res) => __awaiter(void 0, void 0, void 0, function*
     }
 });
 exports.deleteProducts = deleteProducts;
-//# sourceMappingURL=admin.js.map
+//# sourceMappingURL=OLD_admin.js.map

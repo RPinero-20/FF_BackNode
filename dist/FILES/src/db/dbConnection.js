@@ -9,17 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.conectToDB = void 0;
+exports.disconnectDB = exports.conectToDB = void 0;
 const sequelize_typescript_1 = require("sequelize-typescript");
-const db = new sequelize_typescript_1.Sequelize({
-    dialect: 'sqlite',
-    storage: './database/f_ferlestore.db'
+const Product_1 = require("../models/Product");
+const dataBase = new sequelize_typescript_1.Sequelize({
+    host: 'localhost',
+    dialect: 'mariadb',
+    database: 'ferle',
+    username: 'root',
+    password: 'vagrant',
+    models: [Product_1.Product],
 });
 function conectToDB() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            yield db.authenticate();
-            console.log('DB is conected OK!!!');
+            yield dataBase.authenticate();
+            console.log('DB is conected');
         }
         catch (error) {
             throw new Error(error);
@@ -27,5 +32,17 @@ function conectToDB() {
     });
 }
 exports.conectToDB = conectToDB;
-exports.default = db;
-//# sourceMappingURL=connect.js.map
+function disconnectDB() {
+    return __awaiter(this, void 0, void 0, function* () {
+        try {
+            yield dataBase.close();
+            console.log('DB was disconnected by server');
+        }
+        catch (error) {
+            console.warn('DB could not be disconnected by the server');
+        }
+    });
+}
+exports.disconnectDB = disconnectDB;
+exports.default = dataBase;
+//# sourceMappingURL=dbConnection.js.map

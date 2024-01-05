@@ -64,7 +64,6 @@ function getProductsByCategory(params) {
                 code: product.dataValues.code,
                 description: product.dataValues.description,
                 isOffer: product.dataValues.isOffer,
-                discount: product.dataValues.discount,
                 categoryID: product.dataValues.categoryID.toString(),
                 sectionID: product.dataValues.sectionID.toString(),
                 price: parseFloat(product.dataValues.price)
@@ -97,7 +96,6 @@ function getProductsByName(params) {
                 code: product.dataValues.code,
                 description: product.dataValues.description,
                 isOffer: product.dataValues.isOffer,
-                discount: product.dataValues.discount,
                 categoryID: product.dataValues.categoryID.toString(),
                 sectionID: product.dataValues.sectionID.toString(),
                 price: parseFloat(product.dataValues.price)
