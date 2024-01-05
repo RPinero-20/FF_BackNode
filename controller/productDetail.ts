@@ -47,7 +47,7 @@ async function getDetailByIDnCode(productID: number, productCode: string) {
                 code: pDetail.dataValues.code,
                 description: pDetail.dataValues.description,
                 isOffer: pDetail.dataValues.isOffer,
-                discount: pDetail.dataValues.discount,
+                // discount: pDetail.dataValues.discount,
                 categoryID: pDetail.dataValues.categoryID.toString(),
                 sectionID: pDetail.dataValues.sectionID.toString(),
                 price: parseFloat(pDetail.dataValues.price)
@@ -84,7 +84,7 @@ async function getDetailByIDnCode(productID: number, productCode: string) {
                     code: product.dataValues.code,
                     description: product.dataValues.description,
                     isOffer: product.dataValues.isOffer,
-                    discount: product.dataValues.discount,
+                    // discount: product.dataValues.discount,
                     categoryID: product.dataValues.categoryID.toString(),
                     sectionID: product.dataValues.sectionID.toString(),
                     price: parseFloat(product.dataValues.price)

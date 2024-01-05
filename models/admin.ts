@@ -17,6 +17,19 @@ export const sectionsHome = db.define('ff_sections', {
     timestamps: false
 });
 
+export const adminCategory = db.define('ff_categories', {
+    name: {
+        type: DataType.STRING
+    },
+    sectionID: {
+        type: DataType.NUMBER
+    },
+    description: {
+        type: DataType.STRING
+    },
+}, {
+    timestamps: false
+});
 
 export const adminProducts = db.define('ff_products', {
     id: {

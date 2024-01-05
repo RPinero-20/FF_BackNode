@@ -60,7 +60,7 @@ async function getProductsByCategory( params: Number ) { //= async (req: Request
             code: product.dataValues.code,
             description: product.dataValues.description,
             isOffer: product.dataValues.isOffer,
-            discount: product.dataValues.discount,
+            // discount: product.dataValues.discount,
             categoryID: product.dataValues.categoryID.toString(),
             sectionID: product.dataValues.sectionID.toString(),
             price: parseFloat(product.dataValues.price)
@@ -95,7 +95,7 @@ async function getProductsByName( params: string ) { //= async (req: Request, re
             code: product.dataValues.code,
             description: product.dataValues.description,
             isOffer: product.dataValues.isOffer,
-            discount: product.dataValues.discount,
+            // discount: product.dataValues.discount,
             categoryID: product.dataValues.categoryID.toString(),
             sectionID: product.dataValues.sectionID.toString(),
             price: parseFloat(product.dataValues.price)

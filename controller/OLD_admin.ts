@@ -1,22 +1,10 @@
 import { Request, Response } from "express";
-import { adminCategory, adminProducts } from "../models/admin";
+import { adminProducts } from "../models/admin";
 import { json } from "sequelize";
 
 
-export const getAdminCategories = async (_req: Request, res: Response) => {
-    try {
-        const categoryList = await adminCategory.findAll();
-        res.json(categoryList);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            error: ' Internal Server Error'
-        });
-    }
-}
-
-
 export const getProducts = async (_req: Request, res: Response) => {
+    console.log('POR AQUI PASÓ!')
     try {
         const productList = await adminProducts.findAll();
         res.json(productList);

@@ -12,7 +12,8 @@ export interface ProductProps {
     name: string;
     code: string;
     description: string;
-    isOffer: boolean;
+    isOffer: number;
+    // discount: number;
     categoryID: string;
     sectionID: string;
     price: parseFloat;
@@ -32,8 +33,8 @@ export interface ProductDetail {
     code: string;
     description: string;
     longDescription: string;
-    isOffer: boolean;
-    discount: number;
+    isOffer: number;
+    // discount: number;
     categoryID: string;
     sectionID: string;
     price: parseFloat;
@@ -55,6 +56,4 @@ export type AdminURLS = '/home'
 | '/products'
 | '/productDetail/:id'
 | '/products/:code'
-| '/deleteProduct/:id'
-| '/category'
-| '/users';
+| '/deleteProduct/:id';

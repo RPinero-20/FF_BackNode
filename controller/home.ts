@@ -77,6 +77,7 @@ export const getProducts = async (_req: Request, res: Response) => {
                 sectionId: section.dataValues.id.toString(),
                 sectionName: section.dataValues.name,
                 sectionImageUrl: section.dataValues.imageUrl,
+                // productList: section.dataValues.productList,
             }
             return newSection
         });
@@ -90,7 +91,7 @@ export const getProducts = async (_req: Request, res: Response) => {
                 code: product.dataValues.code,
                 description: product.dataValues.description,
                 isOffer: product.dataValues.isOffer,
-                discount: product.dataValues.discount,
+                // discount: product.dataValues.discount,
                 categoryID: product.dataValues.categoryID.toString(),
                 sectionID: product.dataValues.sectionID.toString(),
                 price: parseFloat(product.dataValues.price)
@@ -159,7 +160,7 @@ export const getProductList = async (_req: Request, res: Response) => {
             code: product.dataValues.code,
             description: product.dataValues.description,
             isOffer: product.dataValues.isOffer,
-            discount: product.dataValues.discount,
+            // discount: product.dataValues.discount,
             categoryID: product.dataValues.categoryID.toString(),
             sectionID: product.dataValues.sectionID.toString(),
             price: parseFloat(product.dataValues.price)

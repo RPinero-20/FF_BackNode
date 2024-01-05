@@ -56,9 +56,9 @@ export const productDetails = db.define('ff_products', {
     isOffer: {
         type: DataType.BOOLEAN
     },
-    discount: {
-        type: DataType.INTEGER
-    },
+    // discount: {
+    //     type: DataType.INTEGER
+    // },
     categoryID: {
         type: DataType.INTEGER
     },
